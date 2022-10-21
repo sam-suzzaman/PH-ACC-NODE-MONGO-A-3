@@ -64,4 +64,21 @@ const userLoginHandler = async (req, res) => {
     }
 };
 
-module.exports = { postNewUser, userLoginHandler };
+// get loggedin user info
+const getMe = async (req, res) => {
+    try {
+        //here data comes from token thorugh authentication middleware
+        res.send({
+            status: "ok",
+            user_data: req.user,
+        });
+    } catch (error) {
+        console.log(`get me error is: ${error}`);
+        res.status(400).json({
+            status: "failed",
+            message: error.message,
+        });
+    }
+};
+
+module.exports = { postNewUser, userLoginHandler, getMe };
