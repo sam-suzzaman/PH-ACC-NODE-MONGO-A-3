@@ -42,8 +42,9 @@ const UserSchema = mongoose.Schema(
         },
         role: {
             type: String,
-            enum: ["buyer", "store-manager", "admin"],
-            default: "buyer",
+            trim: true,
+            enum: ["ADMIN", "HIRING MANAGER", "CANDIDATE"],
+            default: "CANDIDATE",
         },
         firstName: {
             type: String,

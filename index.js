@@ -11,6 +11,7 @@ app.use(cors());
 
 // Routers handlers/middlewares import
 const userRouter = require("./routes/userRoutes");
+const jobRouter = require("./routes/JobRoutes");
 
 // Utilites import
 
@@ -20,6 +21,7 @@ DBConnectionHandler();
 
 // main routes
 app.use("/user", userRouter);
+app.use("/jobs", jobRouter);
 
 // default route
 app.get("/", (req, res) => {
