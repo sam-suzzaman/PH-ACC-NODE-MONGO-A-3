@@ -10,12 +10,16 @@ const cors = require("cors");
 app.use(cors());
 
 // Routers handlers/middlewares import
+const userRouter = require("./routes/userRoutes");
 
 // Utilites import
 
 // Database Connection
+const DBConnectionHandler = require("./utilities/DBConnectionHandler");
+DBConnectionHandler();
 
 // main routes
+app.use("/user", userRouter);
 
 // default route
 app.get("/", (req, res) => {
