@@ -19,6 +19,21 @@ const JobSchema = mongoose.Schema({
         required: [true, "Job must have a description"],
         minLenght: [20, "Job title is two short"],
     },
+
+    location: {
+        type: String,
+        required: [true, "Job must have a location"],
+        minLenght: [3, "Enter a valid location"],
+    },
+    jobType: {
+        type: String,
+        required: [true, "Job must have a type"],
+        minLenght: [3, "Enter a valid job type"],
+    },
+    salary: {
+        type: Number,
+        required: [true, "Job must have a Salary value"],
+    },
 });
 
 const JobModel = mongoose.model("Job", JobSchema);

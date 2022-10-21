@@ -12,6 +12,7 @@ app.use(cors());
 // Routers handlers/middlewares import
 const userRouter = require("./routes/userRoutes");
 const jobRouter = require("./routes/JobRoutes");
+// const candidateRouter = require("./routes/candidateRoutes");
 
 // Utilites import
 
